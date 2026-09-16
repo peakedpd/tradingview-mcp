@@ -22,7 +22,7 @@ const server = new McpServer(
     description: 'AI-assisted TradingView chart analysis and Pine Script development via Chrome DevTools Protocol',
   },
   {
-    instructions: `TradingView MCP — 86 tools for reading and controlling a live TradingView Desktop chart.
+    instructions: `TradingView MCP — 87 tools for reading and controlling a live TradingView Desktop chart.
 
 TOOL SELECTION GUIDE — use this to pick the right tool:
 
@@ -34,6 +34,7 @@ Reading your chart:
 
 Reading custom Pine indicator output (line.new/label.new/table.new/box.new drawings):
 - data_get_pine_lines → horizontal price levels from custom indicators (deduplicated, sorted)
+- data_get_study_levels → POC/VAH/VAL and other horizontal levels from NATIVE studies (Volume Profile etc.) as raw numbers — Pine tools cannot see these
 - data_get_pine_labels → text annotations with prices ("PDH 24550", "Bias Long", etc.)
 - data_get_pine_tables → table data as formatted rows (session stats, analytics dashboards)
 - data_get_pine_boxes → price zones as {high, low} pairs

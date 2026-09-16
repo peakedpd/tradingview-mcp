@@ -235,6 +235,7 @@ Read `line.new()`, `label.new()`, `table.new()`, `box.new()` output from any vis
 | Tool | When to use | Output size |
 |------|------------|-------------|
 | `data_get_pine_lines` | Read horizontal price levels (support/resistance, session levels) | ~1-3KB |
+| `data_get_study_levels` | Read POC/VAH/VAL and other horizontal levels from **native** studies (Volume Profile family) as raw numbers — the source the axis labels are rounded from | ~300B |
 | `data_get_pine_labels` | Read text annotations + prices ("PDH 24550", "Bias Long") | ~2-5KB |
 | `data_get_pine_tables` | Read data tables (session stats, analytics dashboards) | ~1-4KB |
 | `data_get_pine_boxes` | Read price zones / ranges as {high, low} pairs | ~1-2KB |
@@ -354,7 +355,7 @@ npm test
 Claude Code  ←→  MCP Server (stdio)  ←→  CDP (port 9222)  ←→  TradingView Desktop (Electron)
 ```
 
-- **Transport**: MCP over stdio (86 tools) + CLI (`tv` command, 30 commands with 68 subcommands)
+- **Transport**: MCP over stdio (87 tools) + CLI (`tv` command, 30 commands with 69 subcommands)
 - **Connection**: Chrome DevTools Protocol on localhost:9222
 - **Streaming**: Poll-and-diff loop with deduplication, JSONL output to stdout
 - **No dependencies** beyond `@modelcontextprotocol/sdk` and `chrome-remote-interface`
