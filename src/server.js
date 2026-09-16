@@ -22,7 +22,7 @@ const server = new McpServer(
     description: 'AI-assisted TradingView chart analysis and Pine Script development via Chrome DevTools Protocol',
   },
   {
-    instructions: `TradingView MCP — 84 tools for reading and controlling a live TradingView Desktop chart.
+    instructions: `TradingView MCP — 86 tools for reading and controlling a live TradingView Desktop chart.
 
 TOOL SELECTION GUIDE — use this to pick the right tool:
 
@@ -45,6 +45,7 @@ Changing the chart:
 - chart_manage_indicator → add/remove studies. USE FULL NAMES: "Relative Strength Index" not "RSI"
 - chart_scroll_to_date → jump to a date (ISO format)
 - indicator_set_inputs → change indicator settings (length, source, etc.)
+- indicator_get_style / indicator_set_style → read/change STYLE properties (colors, line visibility, widths). Volume Profile VAH/VAL lines are hidden by default: set graphics.horizlines.vahLines.visible + valLines.visible true to get their prices on the axis
 
 Pine Script development:
 - pine_set_source → inject code, pine_smart_compile → compile + check errors

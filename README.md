@@ -253,6 +253,7 @@ Read `line.new()`, `label.new()`, `table.new()`, `box.new()` output from any vis
 | `chart_set_visible_range` | Zoom to exact range (unix timestamps) |
 | `symbol_info` / `symbol_search` | Symbol metadata and search |
 | `indicator_set_inputs` / `indicator_toggle_visibility` | Change indicator settings, show/hide |
+| `indicator_get_style` / `indicator_set_style` | Read/change indicator **Style** properties (colors, line visibility, histogram width) via dotted keys, e.g. `graphics.horizlines.vahLines.visible` |
 
 ### Multi-Pane Layouts
 
@@ -353,7 +354,7 @@ npm test
 Claude Code  ←→  MCP Server (stdio)  ←→  CDP (port 9222)  ←→  TradingView Desktop (Electron)
 ```
 
-- **Transport**: MCP over stdio (84 tools) + CLI (`tv` command, 30 commands with 66 subcommands)
+- **Transport**: MCP over stdio (86 tools) + CLI (`tv` command, 30 commands with 68 subcommands)
 - **Connection**: Chrome DevTools Protocol on localhost:9222
 - **Streaming**: Poll-and-diff loop with deduplication, JSONL output to stdout
 - **No dependencies** beyond `@modelcontextprotocol/sdk` and `chrome-remote-interface`
